@@ -113,8 +113,31 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: release
+          force_orphan: true
           commit_message: "chore(release): update compiled rule-sets [skip ci]"
 
+      - name: Purge jsDelivr CDN cache
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.gate.outputs.skip != 'true'
+        run: |
+          python3 -c '
+          import urllib.request, glob, os, concurrent.futures
+
+          paths = glob.glob("dist/**/*", recursive=True)
+          files = [p[5:] for p in paths if os.path.isfile(p)]
+
+          def purge(rel_path):
+              url = f"https://purge.jsdelivr.net/gh/marimario-labs/homelab-rules@release/{rel_path}"
+              try:
+                  with urllib.request.urlopen(url, timeout=10) as resp:
+                      return resp.status == 200
+              except Exception:
+                  return False
+
+          with concurrent.futures.ThreadPoolExecutor(max_workers=8) as ex:
+              results = list(ex.map(purge, files))
+
+          print(f"Purged {sum(results)}/{len(files)} files from jsDelivr CDN")
+          '
       - name: Record tested tree
         if: github.event_name == 'pull_request'
         env:
