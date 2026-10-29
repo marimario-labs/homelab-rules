@@ -176,9 +176,10 @@ def generate_singbox_json(parsed, out_path: Path):
     if parsed["suffix"]:
         rule_obj["domain_suffix"] = parsed["suffix"]
     if parsed["wildcard"]:
-        regexes = [
-            f"^{re.escape(item).replace(r'\*', '.*')}$" for item in parsed["wildcard"]
-        ]
+        regexes = []
+        for item in parsed["wildcard"]:
+            pat = re.escape(item).replace(r"\*", ".*")
+            regexes.append(f"^{pat}$")
         rule_obj["domain_regex"] = sorted(regexes)
     if parsed["cidr"]:
         rule_obj["ip_cidr"] = parsed["cidr"]
