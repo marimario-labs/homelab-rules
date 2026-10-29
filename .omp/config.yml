@@ -1,0 +1,7 @@
+skills:
+  enableClaudeProject: true
+  enableAgentsProject: true
+  enablePiProject: true
+
+mcp:
+  enableProjectConfig: true
