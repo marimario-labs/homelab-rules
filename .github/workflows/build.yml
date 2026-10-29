@@ -79,20 +79,20 @@ jobs:
           mkdir -p "$HOME/.local/bin"
           ARCH="${{ runner.arch }}"
           if [ "$ARCH" = "ARM64" ]; then
-            MIHOMO_SUFFIX="arm64-v8"
-            SINGBOX_SUFFIX="arm64"
+            MIHOMO_SUB="linux-arm64"
+            SINGBOX_SUB="linux-arm64"
           else
-            MIHOMO_SUFFIX="amd64-compatible"
-            SINGBOX_SUFFIX="amd64"
+            MIHOMO_SUB="linux-amd64-compatible"
+            SINGBOX_SUB="linux-amd64"
           fi
 
-          echo "Downloading latest mihomo for ${MIHOMO_SUFFIX}..."
-          MIHOMO_URL=$(gh api repos/MetaCubeX/mihomo/releases/latest --jq ".assets[] | select(.name | test(\"linux-${MIHOMO_SUFFIX}.*\\.gz$\")) | .browser_download_url" | head -n 1)
+          echo "Downloading latest mihomo for ${MIHOMO_SUB}..."
+          MIHOMO_URL=$(gh api repos/MetaCubeX/mihomo/releases/latest --jq ".assets[] | select(.name | contains(\"${MIHOMO_SUB}\") and endswith(\".gz\")) | .browser_download_url" | head -n 1)
           curl -sSL "$MIHOMO_URL" | gzip -d > "$HOME/.local/bin/mihomo"
           chmod +x "$HOME/.local/bin/mihomo"
 
-          echo "Downloading latest sing-box for ${SINGBOX_SUFFIX}..."
-          SINGBOX_URL=$(gh api repos/SagerNet/sing-box/releases/latest --jq ".assets[] | select(.name | test(\"linux-${SINGBOX_SUFFIX}\\.tar\\.gz$\")) | .browser_download_url" | head -n 1)
+          echo "Downloading latest sing-box for ${SINGBOX_SUB}..."
+          SINGBOX_URL=$(gh api repos/SagerNet/sing-box/releases/latest --jq ".assets[] | select(.name | contains(\"${SINGBOX_SUB}.tar.gz\")) | .browser_download_url" | head -n 1)
           TMP_SINGBOX=$(mktemp -d)
           curl -sSL "$SINGBOX_URL" | tar -xz -C "$TMP_SINGBOX" --strip-components=1
           cp "$TMP_SINGBOX/sing-box" "$HOME/.local/bin/sing-box"
