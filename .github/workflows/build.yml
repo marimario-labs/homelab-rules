@@ -25,10 +25,41 @@ jobs:
     steps:
       - name: Check tree reuse
         if: github.event_name == 'push'
-        uses: marimario-labs/ci-shared/tree-reuse/check@v1
         id: gate
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STATUS_CONTEXT: ci-tested-tree
+        run: |
+          set -uo pipefail
+          repo="${{ github.repository }}"
+          sha="${{ github.sha }}"
+          skip=false
+
+          tree="$(gh api "repos/$repo/commits/$sha" --jq .commit.tree.sha)" || tree=""
+          if [[ -z "$tree" ]]; then
+            echo "::warning::读取 $sha 的 tree 失败，完整运行测试。"
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          heads="$(gh api "repos/$repo/commits/$sha/pulls" \
+            --jq '.[] | select(.base.ref == "main" and .merged_at != null) | .head.sha')" || heads=""
+          if [[ -z "$heads" ]]; then
+            echo "该 commit 没有关联的已合并 PR（直接 push），完整运行测试。"
+          fi
+
+          for head in $heads; do
+            recorded="$(gh api "repos/$repo/commits/$head/status?per_page=100" \
+              --jq '[.statuses[] | select(.context == env.STATUS_CONTEXT and .state == "success")][0].description // empty')" || recorded=""
+            recorded="${recorded#tree=}"
+            if [[ -n "$recorded" && "$recorded" == "$tree" ]]; then
+              skip=true
+              echo "main 的 tree 与 PR head $head 已测内容一致，可跳过测试。"
+              break
+            fi
+          done
+
+          echo "skip=$skip" >> "$GITHUB_OUTPUT"
 
       - name: Checkout repository
         if: steps.gate.outputs.skip != 'true'
@@ -86,6 +117,14 @@ jobs:
 
       - name: Record tested tree
         if: github.event_name == 'pull_request'
-        uses: marimario-labs/ci-shared/tree-reuse/record@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          STATUS_CONTEXT: ci-tested-tree
+        run: |
+          set -euo pipefail
+          tree="$(git rev-parse 'HEAD^{tree}')"
+          gh api "repos/${{ github.repository }}/statuses/${{ github.event.pull_request.head.sha }}" \
+            -f state=success \
+            -f context="$STATUS_CONTEXT" \
+            -f description="tree=$tree" \
+            --jq '"recorded status id=\(.id) tree='"$tree"'"'
