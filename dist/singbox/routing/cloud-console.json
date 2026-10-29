@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "api.cloudflare.com",
+        "console.aws.amazon.com",
+        "dash.cloudflare.com",
+        "signin.aws.amazon.com"
+      ]
+    }
+  ]
+}

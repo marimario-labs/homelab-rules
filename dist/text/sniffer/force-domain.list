@@ -1,0 +1,10 @@
+# Profile: force-domain (sniffer)
+# Source: https://github.com/marimario-labs/homelab-rules
+# Total: 6
+
++.discord.com
++.google.com
++.media.dssott.com
++.netflix.com
++.nflxvideo.net
++.v2ex.com

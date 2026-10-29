@@ -1,0 +1,8 @@
+# Profile: cloud-console (routing)
+# Source: https://github.com/marimario-labs/homelab-rules
+# Total: 4
+
+DOMAIN,api.cloudflare.com
+DOMAIN,console.aws.amazon.com
+DOMAIN,dash.cloudflare.com
+DOMAIN,signin.aws.amazon.com

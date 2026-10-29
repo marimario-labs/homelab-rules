@@ -1,0 +1,28 @@
+# Profile: fakeip-filter (dns)
+# Source: https://github.com/marimario-labs/homelab-rules
+# Total: 24
+
+DOMAIN-SUFFIX,asklink.com
+DOMAIN-SUFFIX,aweray.com
+DOMAIN-SUFFIX,gameviewer.com
+DOMAIN-SUFFIX,lan
+DOMAIN-SUFFIX,local
+DOMAIN-SUFFIX,msftconnecttest.com
+DOMAIN-SUFFIX,msftncsi.com
+DOMAIN-SUFFIX,oray.cn
+DOMAIN-SUFFIX,oray.com
+DOMAIN-SUFFIX,oray.com.cn
+DOMAIN-SUFFIX,oray.net
+DOMAIN-SUFFIX,oraycloud.com
+DOMAIN-SUFFIX,pool.ntp.org
+DOMAIN-SUFFIX,raylink.live
+DOMAIN-SUFFIX,sunlogin.com
+DOMAIN-SUFFIX,sunlogin.net
+DOMAIN-SUFFIX,tailscale.com
+DOMAIN-SUFFIX,tailscale.io
+DOMAIN-SUFFIX,todesk.cn
+DOMAIN-SUFFIX,todesk.com
+DOMAIN-SUFFIX,ts.net
+DOMAIN,localhost.ptlogin2.qq.com
+DOMAIN-WILDCARD,ntp.*.com
+DOMAIN-WILDCARD,time.*.com

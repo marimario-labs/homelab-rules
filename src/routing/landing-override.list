@@ -1,0 +1,2 @@
+# Landing Override (Forced residential/landing proxy outbound list)
+# Add domains or IP-CIDRs requiring dedicated residential landing egress

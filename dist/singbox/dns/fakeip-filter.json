@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain": [
+        "localhost.ptlogin2.qq.com"
+      ],
+      "domain_suffix": [
+        "asklink.com",
+        "aweray.com",
+        "gameviewer.com",
+        "lan",
+        "local",
+        "msftconnecttest.com",
+        "msftncsi.com",
+        "oray.cn",
+        "oray.com",
+        "oray.com.cn",
+        "oray.net",
+        "oraycloud.com",
+        "pool.ntp.org",
+        "raylink.live",
+        "sunlogin.com",
+        "sunlogin.net",
+        "tailscale.com",
+        "tailscale.io",
+        "todesk.cn",
+        "todesk.com",
+        "ts.net"
+      ],
+      "domain_regex": [
+        "^ntp\\..*\\.com$",
+        "^time\\..*\\.com$"
+      ]
+    }
+  ]
+}

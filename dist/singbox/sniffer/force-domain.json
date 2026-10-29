@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain_suffix": [
+        "discord.com",
+        "google.com",
+        "media.dssott.com",
+        "netflix.com",
+        "nflxvideo.net",
+        "v2ex.com"
+      ]
+    }
+  ]
+}

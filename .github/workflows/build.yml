@@ -1,0 +1,92 @@
+name: Build and Release Rules
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+  pull_request:
+    branches:
+      - main
+    paths-ignore:
+      - '**.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: read
+  statuses: write
+
+jobs:
+  build:
+    name: Build Rule Sets
+    runs-on: [self-hosted, ci-linux]
+
+    steps:
+      - name: Check tree reuse
+        if: github.event_name == 'push'
+        uses: marimario-labs/ci-shared/tree-reuse/check@v1
+        id: gate
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout repository
+        if: steps.gate.outputs.skip != 'true'
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        if: steps.gate.outputs.skip != 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install mihomo and sing-box
+        if: steps.gate.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          ARCH="${{ runner.arch }}"
+          if [ "$ARCH" = "ARM64" ]; then
+            MIHOMO_SUFFIX="arm64-v8"
+            SINGBOX_SUFFIX="arm64"
+          else
+            MIHOMO_SUFFIX="amd64-compatible"
+            SINGBOX_SUFFIX="amd64"
+          fi
+
+          echo "Downloading latest mihomo for ${MIHOMO_SUFFIX}..."
+          MIHOMO_URL=$(gh api repos/MetaCubeX/mihomo/releases/latest --jq ".assets[] | select(.name | test(\"linux-${MIHOMO_SUFFIX}.*\\.gz$\")) | .browser_download_url" | head -n 1)
+          curl -sSL "$MIHOMO_URL" | gzip -d > "$HOME/.local/bin/mihomo"
+          chmod +x "$HOME/.local/bin/mihomo"
+
+          echo "Downloading latest sing-box for ${SINGBOX_SUFFIX}..."
+          SINGBOX_URL=$(gh api repos/SagerNet/sing-box/releases/latest --jq ".assets[] | select(.name | test(\"linux-${SINGBOX_SUFFIX}\\.tar\\.gz$\")) | .browser_download_url" | head -n 1)
+          TMP_SINGBOX=$(mktemp -d)
+          curl -sSL "$SINGBOX_URL" | tar -xz -C "$TMP_SINGBOX" --strip-components=1
+          cp "$TMP_SINGBOX/sing-box" "$HOME/.local/bin/sing-box"
+          rm -rf "$TMP_SINGBOX"
+          chmod +x "$HOME/.local/bin/sing-box"
+
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Build rule sets
+        if: steps.gate.outputs.skip != 'true'
+        run: |
+          python3 scripts/build.py
+
+      - name: Deploy to release branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.gate.outputs.skip != 'true'
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: release
+          commit_message: "chore(release): update compiled rule-sets [skip ci]"
+
+      - name: Record tested tree
+        if: github.event_name == 'pull_request'
+        uses: marimario-labs/ci-shared/tree-reuse/record@v1
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

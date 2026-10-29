@@ -1,0 +1,25 @@
+# Fake-IP Filter (Domains excluded from Fake-IP resolution: intranet, NTP, connectivity checks, remote control, mesh)
++.lan
++.local
+localhost.ptlogin2.qq.com
++.msftconnecttest.com
++.msftncsi.com
+time.*.com
+ntp.*.com
++.pool.ntp.org
++.tailscale.com
++.tailscale.io
++.ts.net
++.todesk.com
++.todesk.cn
++.oray.com
++.oray.net
++.oray.cn
++.oray.com.cn
++.oraycloud.com
++.sunlogin.net
++.sunlogin.com
++.aweray.com
++.gameviewer.com
++.raylink.live
++.asklink.com
