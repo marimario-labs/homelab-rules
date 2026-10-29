@@ -17,11 +17,10 @@ permissions:
   contents: write
   pull-requests: read
   statuses: write
-
 jobs:
   build:
     name: Build Rule Sets
-    runs-on: [self-hosted, ci-linux]
+    runs-on: ubuntu-latest
 
     steps:
       - name: Check tree reuse
