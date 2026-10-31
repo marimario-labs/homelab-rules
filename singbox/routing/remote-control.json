@@ -1,0 +1,17 @@
+{
+  "version": 2,
+  "rules": [
+    {
+      "domain_suffix": [
+        "asklink.com",
+        "gameviewer.com",
+        "oray.com",
+        "raylink.live",
+        "sunlogin.net",
+        "tailscale.com",
+        "todesk.com",
+        "ts.net"
+      ]
+    }
+  ]
+}

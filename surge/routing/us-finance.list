@@ -1,0 +1,34 @@
+# Profile: us-finance (routing)
+# Source: https://github.com/marimario-labs/homelab-rules
+# Total: 30
+
+DOMAIN-SUFFIX,aexp-static.com
+DOMAIN-SUFFIX,alliantcreditunion.org
+DOMAIN-SUFFIX,americanexpress.com
+DOMAIN-SUFFIX,bankofamerica.com
+DOMAIN-SUFFIX,bofa.com
+DOMAIN-SUFFIX,capitalone.com
+DOMAIN-SUFFIX,chase.com
+DOMAIN-SUFFIX,chime.com
+DOMAIN-SUFFIX,citi.com
+DOMAIN-SUFFIX,citibank.com
+DOMAIN-SUFFIX,citigroup.com
+DOMAIN-SUFFIX,discover.com
+DOMAIN-SUFFIX,discovercard.com
+DOMAIN-SUFFIX,equifax.com
+DOMAIN-SUFFIX,experian.com
+DOMAIN-SUFFIX,fidelity.com
+DOMAIN-SUFFIX,firstrade.com
+DOMAIN-SUFFIX,ibkr.com
+DOMAIN-SUFFIX,interactivebrokers.com
+DOMAIN-SUFFIX,jpmorganchase.com
+DOMAIN-SUFFIX,penfed.org
+DOMAIN-SUFFIX,plaid.com
+DOMAIN-SUFFIX,robinhood.com
+DOMAIN-SUFFIX,schwab.com
+DOMAIN-SUFFIX,schwabcdn.com
+DOMAIN-SUFFIX,sofi.com
+DOMAIN-SUFFIX,transunion.com
+DOMAIN-SUFFIX,usbank.com
+DOMAIN-SUFFIX,vanguard.com
+DOMAIN-SUFFIX,wellsfargo.com

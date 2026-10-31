@@ -1,0 +1,28 @@
+# Profile: fakeip-filter (dns)
+# Source: https://github.com/marimario-labs/homelab-rules
+# Total: 24
+
++.asklink.com
++.aweray.com
++.gameviewer.com
++.lan
++.local
++.msftconnecttest.com
++.msftncsi.com
++.oray.cn
++.oray.com
++.oray.com.cn
++.oray.net
++.oraycloud.com
++.pool.ntp.org
++.raylink.live
++.sunlogin.com
++.sunlogin.net
++.tailscale.com
++.tailscale.io
++.todesk.cn
++.todesk.com
++.ts.net
+localhost.ptlogin2.qq.com
+ntp.*.com
+time.*.com

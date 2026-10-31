@@ -1,0 +1,22 @@
+# Profile: offshore-finance (routing)
+# Source: https://github.com/marimario-labs/homelab-rules
+# Total: 18
+
+DOMAIN-SUFFIX,airwallex.com
+DOMAIN-SUFFIX,dukascopy.bank
+DOMAIN-SUFFIX,dukascopy.com
+DOMAIN-SUFFIX,expat.hsbc.com
+DOMAIN-SUFFIX,ifastgb.com
+DOMAIN-SUFFIX,ifastnetwork.com
+DOMAIN-SUFFIX,ifastps.com
+DOMAIN-SUFFIX,mox.com
+DOMAIN-SUFFIX,n26.com
+DOMAIN-SUFFIX,ocbc.com
+DOMAIN-SUFFIX,offshore.hsbc.com
+DOMAIN-SUFFIX,payoneer.com
+DOMAIN-SUFFIX,revolut.com
+DOMAIN-SUFFIX,revolutcodes.com
+DOMAIN-SUFFIX,transferwise.com
+DOMAIN-SUFFIX,wise.com
+DOMAIN-SUFFIX,za.group
+DOMAIN-SUFFIX,zen.com
