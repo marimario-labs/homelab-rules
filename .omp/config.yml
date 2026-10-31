@@ -1,7 +1,16 @@
 skills:
-  enableClaudeProject: true
-  enableAgentsProject: true
-  enablePiProject: true
-
-mcp:
-  enableProjectConfig: true
+  enableAgentsUser: true
+  includeSkills:
+    - pr
+    - retro
+    - wait-what
+    - diagnosing-bugs
+    - wizard
+    - git-guardrails-claude-code
+    - writing-for-agents
+    - writing-guidelines
+    - obsidian-vault
+    - obsidian-markdown
+    - agent-reach
+    - find-skills
+    - project-init

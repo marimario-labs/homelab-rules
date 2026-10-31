@@ -1,0 +1,27 @@
+{
+  "skills": [
+    "!**",
+    "+skills/pr",
+    "+skills/retro",
+    "+skills/wait-what",
+    "+skills/diagnosing-bugs",
+    "+skills/wizard",
+    "+skills/git-guardrails-claude-code",
+    "+skills/writing-for-agents",
+    "+skills/writing-guidelines",
+    "+skills/obsidian-vault",
+    "+skills/obsidian-markdown",
+    "+skills/agent-reach",
+    "+skills/find-skills",
+    "+skills/project-init"
+  ],
+  "packages": [
+    {
+      "source": "npm:pi-hermes-memory",
+      "autoload": false,
+      "extensions": [
+        "!**"
+      ]
+    }
+  ]
+}

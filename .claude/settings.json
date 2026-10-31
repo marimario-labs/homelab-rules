@@ -11,6 +11,19 @@
     "pr": "user-invocable-only",
     "writing-for-agents": "user-invocable-only",
     "writing-guidelines": "user-invocable-only",
-    "diagnosing-bugs": "user-invocable-only"
+    "diagnosing-bugs": "user-invocable-only",
+    "chrome-extension": "off",
+    "chrome-extensions": "off"
+  },
+  "enabledPlugins": {
+    "frontend-design@claude-plugins-official": false,
+    "typescript-lsp@claude-plugins-official": false,
+    "gopls-lsp@claude-plugins-official": false,
+    "swift-lsp@claude-plugins-official": false,
+    "lua-lsp@claude-plugins-official": false,
+    "rust-analyzer-lsp@claude-plugins-official": false,
+    "jdtls-lsp@claude-plugins-official": false,
+    "php-lsp@claude-plugins-official": false,
+    "clangd-lsp@claude-plugins-official": false
   }
 }

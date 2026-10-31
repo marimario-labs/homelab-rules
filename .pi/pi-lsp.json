@@ -1,0 +1,6 @@
+{
+  "ruff": {
+    "command": ["ruff", "server"],
+    "extensions": [".py", ".pyi"]
+  }
+}
