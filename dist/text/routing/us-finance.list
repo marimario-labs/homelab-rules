@@ -1,4 +1,34 @@
 # Profile: us-finance (routing)
 # Source: https://github.com/marimario-labs/homelab-rules
-# Total: 0
+# Total: 30
 
++.aexp-static.com
++.alliantcreditunion.org
++.americanexpress.com
++.bankofamerica.com
++.bofa.com
++.capitalone.com
++.chase.com
++.chime.com
++.citi.com
++.citibank.com
++.citigroup.com
++.discover.com
++.discovercard.com
++.equifax.com
++.experian.com
++.fidelity.com
++.firstrade.com
++.ibkr.com
++.interactivebrokers.com
++.jpmorganchase.com
++.penfed.org
++.plaid.com
++.robinhood.com
++.schwab.com
++.schwabcdn.com
++.sofi.com
++.transunion.com
++.usbank.com
++.vanguard.com
++.wellsfargo.com

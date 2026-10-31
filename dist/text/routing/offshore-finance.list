@@ -1,4 +1,22 @@
 # Profile: offshore-finance (routing)
 # Source: https://github.com/marimario-labs/homelab-rules
-# Total: 0
+# Total: 18
 
++.airwallex.com
++.dukascopy.bank
++.dukascopy.com
++.expat.hsbc.com
++.ifastgb.com
++.ifastnetwork.com
++.ifastps.com
++.mox.com
++.n26.com
++.ocbc.com
++.offshore.hsbc.com
++.payoneer.com
++.revolut.com
++.revolutcodes.com
++.transferwise.com
++.wise.com
++.za.group
++.zen.com

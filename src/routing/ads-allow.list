@@ -1,3 +1,41 @@
-# Ads Allowlist (Google Ads, Meta Ads tracking & campaign portals - reserved placeholder for v1)
-# ads.google.com
-# business.facebook.com
+# Ads Allowlist (Overseas ad campaign portals & pixel/conversion tracking allowlist)
+# Google Ads & Marketing Platform
+ads.google.com
+adwords.google.com
+marketingplatform.google.com
+analytics.google.com
+tagmanager.google.com
+googletagmanager.com
+googleadservices.com
+google-analytics.com
+adtrafficquality.google.com
+
+# Meta / Facebook Business Suite & Pixel
+business.facebook.com
+adsmanager.facebook.com
+connect.facebook.net
+pixel.facebook.com
+graph.facebook.com
+an.facebook.com
+
+# TikTok for Business / Ads
+ads.tiktok.com
+business.tiktok.com
+business-api.tiktok.com
+analytics.tiktok.com
+
+# Microsoft Advertising & UET Tag
+ads.microsoft.com
+bingads.microsoft.com
+bat.bing.com
+
+# Twitter / X Ads
+ads.twitter.com
+ads.x.com
+analytics.twitter.com
+
+# Pinterest & LinkedIn Ads
+ads.pinterest.com
+ct.pinterest.com
+ads.linkedin.com
+snap.licdn.com

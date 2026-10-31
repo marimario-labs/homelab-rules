@@ -1,4 +1,27 @@
 {
   "version": 2,
-  "rules": []
+  "rules": [
+    {
+      "domain_suffix": [
+        "airwallex.com",
+        "dukascopy.bank",
+        "dukascopy.com",
+        "expat.hsbc.com",
+        "ifastgb.com",
+        "ifastnetwork.com",
+        "ifastps.com",
+        "mox.com",
+        "n26.com",
+        "ocbc.com",
+        "offshore.hsbc.com",
+        "payoneer.com",
+        "revolut.com",
+        "revolutcodes.com",
+        "transferwise.com",
+        "wise.com",
+        "za.group",
+        "zen.com"
+      ]
+    }
+  ]
 }

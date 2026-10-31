@@ -1,4 +1,33 @@
 # Profile: ads-allow (routing)
 # Source: https://github.com/marimario-labs/homelab-rules
-# Total: 0
+# Total: 29
 
+DOMAIN-SUFFIX,google-analytics.com
+DOMAIN-SUFFIX,googleadservices.com
+DOMAIN-SUFFIX,googletagmanager.com
+DOMAIN,ads.google.com
+DOMAIN,ads.linkedin.com
+DOMAIN,ads.microsoft.com
+DOMAIN,ads.pinterest.com
+DOMAIN,ads.tiktok.com
+DOMAIN,ads.twitter.com
+DOMAIN,ads.x.com
+DOMAIN,adsmanager.facebook.com
+DOMAIN,adtrafficquality.google.com
+DOMAIN,adwords.google.com
+DOMAIN,an.facebook.com
+DOMAIN,analytics.google.com
+DOMAIN,analytics.tiktok.com
+DOMAIN,analytics.twitter.com
+DOMAIN,bat.bing.com
+DOMAIN,bingads.microsoft.com
+DOMAIN,business-api.tiktok.com
+DOMAIN,business.facebook.com
+DOMAIN,business.tiktok.com
+DOMAIN,connect.facebook.net
+DOMAIN,ct.pinterest.com
+DOMAIN,graph.facebook.com
+DOMAIN,marketingplatform.google.com
+DOMAIN,pixel.facebook.com
+DOMAIN,snap.licdn.com
+DOMAIN,tagmanager.google.com

@@ -1,4 +1,33 @@
 # Profile: ads-allow (routing)
 # Source: https://github.com/marimario-labs/homelab-rules
-# Total: 0
+# Total: 29
 
++.google-analytics.com
++.googleadservices.com
++.googletagmanager.com
+ads.google.com
+ads.linkedin.com
+ads.microsoft.com
+ads.pinterest.com
+ads.tiktok.com
+ads.twitter.com
+ads.x.com
+adsmanager.facebook.com
+adtrafficquality.google.com
+adwords.google.com
+an.facebook.com
+analytics.google.com
+analytics.tiktok.com
+analytics.twitter.com
+bat.bing.com
+bingads.microsoft.com
+business-api.tiktok.com
+business.facebook.com
+business.tiktok.com
+connect.facebook.net
+ct.pinterest.com
+graph.facebook.com
+marketingplatform.google.com
+pixel.facebook.com
+snap.licdn.com
+tagmanager.google.com

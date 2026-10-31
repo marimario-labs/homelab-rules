@@ -1,3 +1,38 @@
-# US Finance (US banking, credit unions, brokerages - reserved placeholder for v1)
-# chase.com
-# bankofamerica.com
+# US Finance (US retail banks, credit unions, brokerages, KYC & credit bureaus)
+# Major Retail & Commercial Banks
+chase.com
+jpmorganchase.com
+bankofamerica.com
+bofa.com
+citi.com
+citibank.com
+citigroup.com
+capitalone.com
+wellsfargo.com
+usbank.com
+discover.com
+discovercard.com
+americanexpress.com
+aexp-static.com
+
+# Brokerages, Investment & Wealth Management
+schwab.com
+schwabcdn.com
+fidelity.com
+interactivebrokers.com
+ibkr.com
+robinhood.com
+vanguard.com
+firstrade.com
+
+# Digital Banks & Credit Unions
+sofi.com
+chime.com
+penfed.org
+alliantcreditunion.org
+
+# US Credit Bureaus & Financial Identity Verification
+experian.com
+equifax.com
+transunion.com
+plaid.com
